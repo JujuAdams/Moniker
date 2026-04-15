@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"__MonikerDecompose",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__MonikerDecompose",
+  "parent":{
+    "name":"Support",
+    "path":"folders/Moniker/(System)/Parsers/Support.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

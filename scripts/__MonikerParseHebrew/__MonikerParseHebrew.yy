@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"__MonikerParseHebrew",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__MonikerParseHebrew",
+  "parent":{
+    "name":"Parsers",
+    "path":"folders/Moniker/(System)/Parsers.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

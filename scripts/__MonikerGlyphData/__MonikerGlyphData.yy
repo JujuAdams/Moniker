@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"__MonikerGlyphData",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__MonikerGlyphData",
+  "parent":{
+    "name":"(System)",
+    "path":"folders/Moniker/(System).yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

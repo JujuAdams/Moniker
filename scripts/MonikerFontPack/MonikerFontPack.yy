@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"MonikerFontPack",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"MonikerFontPack",
+  "parent":{
+    "name":"Moniker",
+    "path":"folders/Moniker.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

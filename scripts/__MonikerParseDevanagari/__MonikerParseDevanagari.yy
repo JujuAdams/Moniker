@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"__MonikerParseDevanagari",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__MonikerParseDevanagari",
+  "parent":{
+    "name":"Parsers",
+    "path":"folders/Moniker/(System)/Parsers.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

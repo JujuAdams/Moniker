@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"__MonikerGlyphArrayBiDiReorder",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__MonikerGlyphArrayBiDiReorder",
+  "parent":{
+    "name":"Support",
+    "path":"folders/Moniker/(System)/Parsers/Support.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"__MonikerParseThai",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__MonikerParseThai",
+  "parent":{
+    "name":"Parsers",
+    "path":"folders/Moniker/(System)/Parsers.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

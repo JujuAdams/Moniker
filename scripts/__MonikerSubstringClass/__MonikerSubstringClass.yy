@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"__MonikerSubstringClass",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__MonikerSubstringClass",
+  "parent":{
+    "name":"(System)",
+    "path":"folders/Moniker/(System).yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
