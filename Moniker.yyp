@@ -1,6 +1,6 @@
 {
   "$GMProject":"v1",
-  "%Name":"ScreenName",
+  "%Name":"Moniker",
   "AudioGroups":[
     {"$GMAudioGroup":"v1","%Name":"audiogroup_default","exportDir":"","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
@@ -37,7 +37,7 @@
   "MetaData":{
     "IDEVersion":"2024.1400.4.1030",
   },
-  "name":"ScreenName",
+  "name":"Moniker",
   "resources":[
     {"id":{"name":"oTest","path":"objects/oTest/oTest.yy",},},
     {"id":{"name":"rMain","path":"rooms/rMain/rMain.yy",},},

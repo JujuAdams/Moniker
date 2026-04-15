@@ -17,8 +17,8 @@
   ],
   "name":"rMain",
   "parent":{
-    "name":"ScreenName",
-    "path":"ScreenName.yyp",
+    "name":"Moniker",
+    "path":"Moniker.yyp",
   },
   "parentRoom":null,
   "physicsSettings":{

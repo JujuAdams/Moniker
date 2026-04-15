@@ -9,8 +9,8 @@
   "name":"oTest",
   "overriddenProperties":[],
   "parent":{
-    "name":"ScreenName",
-    "path":"ScreenName.yyp",
+    "name":"Moniker",
+    "path":"Moniker.yyp",
   },
   "parentObjectId":null,
   "persistent":false,
