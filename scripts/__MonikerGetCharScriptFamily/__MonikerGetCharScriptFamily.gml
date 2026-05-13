@@ -1,74 +1,68 @@
-function __MonikerGetCharScriptFamily(_glyphIndex)
+function __MonikerGetCharScriptFamily(_glyphIndex, _hasSimplifiedChineseFont, _hasTraditionalChineseFont)
 {
-    static _system = __MonikerSystem();
+    static _lookUpBuffer = __MonikerSystem().__lookUpBuffer;
     
-    if (((_glyphIndex >= 32) && (_glyphIndex <= 127)) //ASCII Latin
-    ||  ((_glyphIndex >= 128) && (_glyphIndex <= 591)))
+    if ((_glyphIndex < 0) || (_glyphIndex > 0xFFFF))
     {
-        return MONIKER_SCRIPT_FAMILY_LATIN;
+        return MONIKER_SCRIPT_FAMILY_FALLBACK;
     }
     
-    if ((_glyphIndex >= 880) && (_glyphIndex <= 1023)) //Greek
+    var _data = buffer_peek(_lookUpBuffer, _glyphIndex, buffer_u8);
+    if (_data == MONIKER_SCRIPT_FAMILY_FALLBACK)
     {
-        return MONIKER_SCRIPT_FAMILY_GREEK;
+        return MONIKER_SCRIPT_FAMILY_FALLBACK;
     }
     
-    if ((_glyphIndex >= 0x0E00) && (_glyphIndex <= 0x0E7F)) //Thai
+    var _scriptFamily = _data & __MONIKER_BINARY_SCRIPT_FAMILY_MASK;
+    if (_scriptFamily > MONIKER_SCRIPT_FAMILY_FALLBACK) // 0
     {
-        return MONIKER_SCRIPT_FAMILY_THAI;
+        return _scriptFamily;
     }
-    
-    if ((_glyphIndex >= 0x0900) && (_glyphIndex <= 0x097F)) //Devanagari
+    else
     {
-        return MONIKER_SCRIPT_FAMILY_DEVANAGARI;
-    }
-    
-    if ((_glyphIndex >= 1024) && (_glyphIndex <= 1279)) //Cyrillic
-    {
-        return MONIKER_SCRIPT_FAMILY_CYRILLIC;
-    }
-    
-    if ((_glyphIndex >= 1424) && (_glyphIndex <= 1535)) //Hebrew
-    {
-        return MONIKER_SCRIPT_FAMILY_HEBREW;
-    }
-    
-    if (((_glyphIndex >=  1536) && (_glyphIndex <=  1791))  //Arabic
-    ||  ((_glyphIndex >=  8216) && (_glyphIndex <=  8217))  //Arabic quotation marks
-    ||  ((_glyphIndex >= 65136) && (_glyphIndex <= 65279))) //Arabic Presentation Forms B
-    {
-        return MONIKER_SCRIPT_FAMILY_ARABIC;
-    }
-    
-    if (((_glyphIndex >= 0x3041) && (_glyphIndex <= 0x3096))  //Hiragana
-    ||  ((_glyphIndex >= 0x30A0) && (_glyphIndex <= 0x30FF))) //Katakana
-    {
-        return MONIKER_SCRIPT_FAMILY_JAPANESE;
-    }
-    
-    if (((_glyphIndex >= 0xAC00) && (_glyphIndex <= 0xD7A3))  //Hangul Syllables
-    ||  ((_glyphIndex >= 0x1100) && (_glyphIndex <= 0x11FF))  //Hangul Jamo
-    ||  ((_glyphIndex >= 0xA960) && (_glyphIndex <= 0xA97F))  //Hangul Jamo Extended-A
-    ||  ((_glyphIndex >= 0xD7B0) && (_glyphIndex <= 0xD7FF))  //Hangul Jamo Extended-B
-    ||  ((_glyphIndex >= 0x3130) && (_glyphIndex <= 0x318F))) //Hangul Compatibility Jamo
-    {
-        return MONIKER_SCRIPT_FAMILY_KOREAN;
-    }
-    
-    if (ds_map_exists(_system.__chineseTradCharMap, _glyphIndex))
-    {
-        return MONIKER_SCRIPT_FAMILY_CHINESE_TRAD;
-    }
-    
-    if (ds_map_exists(_system.__chineseSimpCharMap, _glyphIndex))
-    {
-        return MONIKER_SCRIPT_FAMILY_CHINESE_SIMP;
-    }
-    
-    if (((_glyphIndex >= 0x3000) && (_glyphIndex <= 0x303F))  //CJK Symbols and Punctuation
-    ||  ((_glyphIndex >= 0x4E00) && (_glyphIndex <= 0x9FFF))) //CJK Unified Ideographs (including Kanji)
-    {
-        return MONIKER_SCRIPT_FAMILY_CJK_SHARED;
+        //Not a non-Chinese font, not empty. This must be a Chinese character of some description
+        
+        if (_hasSimplifiedChineseFont)
+        {
+            if (_hasTraditionalChineseFont)
+            {
+                //We have a font for both types of Chinese. Choose one of them for the script family
+                
+                if (MONIKER_PREFER_CHINESE_SIMP)
+                {
+                    if (_data & __MONIKER_BINARY_CHINESE_SIMP)
+                    {
+                        return MONIKER_SCRIPT_FAMILY_CHINESE_SIMP;
+                    }
+                    else if (_data & __MONIKER_BINARY_CHINESE_TRAD)
+                    {
+                        return MONIKER_SCRIPT_FAMILY_CHINESE_TRAD;
+                    }
+                }
+                else
+                {
+                    if (_data & __MONIKER_BINARY_CHINESE_TRAD)
+                    {
+                        return MONIKER_SCRIPT_FAMILY_CHINESE_TRAD;
+                    }
+                    else if (_data & __MONIKER_BINARY_CHINESE_SIMP)
+                    {
+                        return MONIKER_SCRIPT_FAMILY_CHINESE_SIMP;
+                    }
+                }
+            }
+            else
+            {
+                return MONIKER_SCRIPT_FAMILY_CHINESE_SIMP;
+            }
+        }
+        else
+        {
+            if (_hasTraditionalChineseFont)
+            {
+                return MONIKER_SCRIPT_FAMILY_CHINESE_TRAD;
+            }
+        }
     }
     
     return MONIKER_SCRIPT_FAMILY_FALLBACK;

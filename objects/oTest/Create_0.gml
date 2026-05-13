@@ -24,7 +24,7 @@ var _fontPack = new MonikerFontPack(true, [
         yOffset: -0.25*_size,
     },
     {
-        scriptFamily: MONIKER_SCRIPT_FAMILY_JAPANESE,
+        scriptFamily: [MONIKER_SCRIPT_FAMILY_JAPANESE, MONIKER_SCRIPT_FAMILY_CJK_SHARED],
         path: "NotoSansJP-Black.otf",
         size: _size,
         xOffset: 0,

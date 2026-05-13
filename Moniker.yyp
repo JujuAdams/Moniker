@@ -18,6 +18,7 @@
   "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"KRDEV370.TTF","CopyToMask":-1,"filePath":"datafiles","name":"KRDEV370.TTF","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"moniker_lut.bin","CopyToMask":-1,"filePath":"datafiles","name":"moniker_lut.bin","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"Montserrat_license.txt","CopyToMask":-1,"filePath":"datafiles","name":"Montserrat_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"Montserrat-BlackItalic.ttf","CopyToMask":-1,"filePath":"datafiles","name":"Montserrat-BlackItalic.ttf","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"NotoKufi_license.txt","CopyToMask":-1,"filePath":"datafiles","name":"NotoKufi_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -35,12 +36,14 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.1400.4.1030",
+    "IDEVersion":"2024.1400.5.1052",
   },
   "name":"Moniker",
   "resources":[
     {"id":{"name":"oTest","path":"objects/oTest/oTest.yy",},},
     {"id":{"name":"rMain","path":"rooms/rMain/rMain.yy",},},
+    {"id":{"name":"__MonikerBuildLookUpTable","path":"scripts/__MonikerBuildLookUpTable/__MonikerBuildLookUpTable.yy",},},
+    {"id":{"name":"__MonikerConfig","path":"scripts/__MonikerConfig/__MonikerConfig.yy",},},
     {"id":{"name":"__MonikerConstants","path":"scripts/__MonikerConstants/__MonikerConstants.yy",},},
     {"id":{"name":"__MonikerDecompose","path":"scripts/__MonikerDecompose/__MonikerDecompose.yy",},},
     {"id":{"name":"__MonikerGetCharScriptFamily","path":"scripts/__MonikerGetCharScriptFamily/__MonikerGetCharScriptFamily.yy",},},
@@ -54,6 +57,8 @@
     {"id":{"name":"__MonikerSubstringClass","path":"scripts/__MonikerSubstringClass/__MonikerSubstringClass.yy",},},
     {"id":{"name":"__MonikerSystem","path":"scripts/__MonikerSystem/__MonikerSystem.yy",},},
     {"id":{"name":"Moniker","path":"scripts/Moniker/Moniker.yy",},},
+    {"id":{"name":"MonikerCache","path":"scripts/MonikerCache/MonikerCache.yy",},},
+    {"id":{"name":"MonikerClearCache","path":"scripts/MonikerClearCache/MonikerClearCache.yy",},},
     {"id":{"name":"MonikerFontPack","path":"scripts/MonikerFontPack/MonikerFontPack.yy",},},
   ],
   "resourceType":"GMProject",

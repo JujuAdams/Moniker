@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"MonikerClearCache",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"MonikerClearCache",
+  "parent":{
+    "name":"Moniker",
+    "path":"folders/Moniker.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

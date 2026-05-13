@@ -1,7 +1,8 @@
 // Feather disable all
 
 /// Constructor that returns a struct that can be used to draw player names. You should create a
-/// font pack with `MonikerFontPack()` before calling this function.
+/// font pack with `MonikerFontPack()` before calling this function. If no font pack is specified
+/// then this function will use the default font pack (the font pack that was first created).
 /// 
 /// @param name
 /// @param [fontPack]
@@ -11,6 +12,10 @@
 /// `.Draw(x, y, [scale=1])`
 ///     Draws the name at the given coordinates and scale. This will respect global horizontal and
 ///     vertical alignment.
+/// 
+/// `.DrawFit(x, y, [scale=1], [maxWidth], [maxHeight])`
+///     Draws the name at the given coordinates and scale. If the name is wider or taller than the
+///     given maximum width/height then the text will be scaled down.
 /// 
 /// `.GetWidth()`
 ///     Returns the width of the name when drawn.
@@ -40,6 +45,9 @@ function Moniker(_name, _fontPack = undefined) constructor
     
     if (rawName != "")
     {
+        var _hasSimplifiedChineseFont  = fontPack.__hasChineseSimpFont;
+        var _hasTraditionalChineseFont = fontPack.__hasChineseTradFont;
+        
         var _workingName = rawName;
         _workingName = __MonikerParseThai(_workingName);
         _workingName = __MonikerParseArabic(_workingName);
@@ -48,12 +56,12 @@ function Moniker(_name, _fontPack = undefined) constructor
         var _charArray = __MonikerDecompose(_workingName);
         
         var _substringStart = 0;
-        var _currentScriptFamily = __MonikerGetCharScriptFamily(_charArray[0]);
+        var _currentScriptFamily = __MonikerGetCharScriptFamily(_charArray[0], _hasSimplifiedChineseFont, _hasTraditionalChineseFont);
         
         var _i = 1;
         repeat(array_length(_charArray)-1)
         {
-            var _scriptFamily = __MonikerGetCharScriptFamily(_charArray[_i]);
+            var _scriptFamily = __MonikerGetCharScriptFamily(_charArray[_i], _hasSimplifiedChineseFont, _hasTraditionalChineseFont);
             if (_scriptFamily != _currentScriptFamily)
             {
                 var _substring = __MonikerRecompose(_charArray, true, _substringStart, _i - _substringStart);
@@ -125,6 +133,31 @@ function Moniker(_name, _fontPack = undefined) constructor
         draw_set_valign(_oldVAlign);
     }
     
+    static DrawFit = function(_x, _y, _scale = 1, _maxWidth = infinity, _maxHeight = infinity)
+    {
+        _scale = min(_scale, _maxWidth / __width, _maxHeight / __height);
+        
+        if (draw_get_halign() == fa_center)
+        {
+            _x += floor((__width - _scale*__width)/2);
+        }
+        else if (draw_get_halign() == fa_right)
+        {
+            _x += floor(__width - _scale*__width);
+        }
+        
+        if (draw_get_valign() == fa_middle)
+        {
+            _y += floor((__height - _scale*__height)/2);
+        }
+        else if (draw_get_valign() == fa_bottom)
+        {
+            _y += floor(__height - _scale*__height);
+        }
+        
+        return Draw(_x, _y, _scale);
+    }
+    
     static SetFontPack = function(_fontPack = undefined)
     {
         fontPack = _fontPack ?? _system.__defaultFontPack;
@@ -143,6 +176,8 @@ function Moniker(_name, _fontPack = undefined) constructor
     {
         return __height;
     }
+    
+    
     
     static __Recalculate = function()
     {

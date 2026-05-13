@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"__MonikerBuildLookUpTable",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__MonikerBuildLookUpTable",
+  "parent":{
+    "name":"(System)",
+    "path":"folders/Moniker/(System).yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
