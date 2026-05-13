@@ -14,7 +14,7 @@ function __MonikerGetCharScriptFamily(_glyphIndex, _hasSimplifiedChineseFont, _h
     }
     
     var _scriptFamily = _data & __MONIKER_BINARY_SCRIPT_FAMILY_MASK;
-    if (_scriptFamily > MONIKER_SCRIPT_FAMILY_FALLBACK) // 0
+    if ((_scriptFamily > MONIKER_SCRIPT_FAMILY_FALLBACK) && (_scriptFamily != MONIKER_SCRIPT_FAMILY_CJK_SHARED))
     {
         return _scriptFamily;
     }
@@ -65,5 +65,5 @@ function __MonikerGetCharScriptFamily(_glyphIndex, _hasSimplifiedChineseFont, _h
         }
     }
     
-    return MONIKER_SCRIPT_FAMILY_FALLBACK;
+    return _scriptFamily;
 }
