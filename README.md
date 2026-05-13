@@ -10,6 +10,7 @@ Here are some well-known test usernames:
 فلانة الفلانية
 gttest1
 ইয়ে smith
+小明
 ```
 
 When set up, Moniker can render these sorts of complex multi-script usernames.
