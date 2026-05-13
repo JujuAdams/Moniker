@@ -1,4 +1,4 @@
-<h1 align="center">Moniker 1.0.0</h1>
+<h1 align="center">Moniker 1.2.0</h1>
 <p align="center">Arbitrary, internationalized player name rendering for GameMaker</p>
 
 Here are some well-known test usernames:
