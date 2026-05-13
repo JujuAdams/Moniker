@@ -1,4 +1,4 @@
-#macro MONIKER_VERSION  "1.2.0"
+#macro MONIKER_VERSION  "1.2.1"
 #macro MONIKER_DATE     "2026-05-13"
 
 #macro MONIKER_SCRIPT_FAMILY_FALLBACK       0 //Must be zero
