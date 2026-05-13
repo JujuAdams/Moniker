@@ -7,7 +7,9 @@ Here are some well-known test usernames:
 สฐ众нь컴퓨
 आथाώঙぁヺ
 øÜêþЯЂў
+فلانة الفلانية
 gttest1
+ইয়ে smith
 ```
 
 When set up, Moniker can render these sorts of complex multi-script usernames.
