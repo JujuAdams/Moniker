@@ -12,4 +12,4 @@ gttest1
 小明
 ```
 
-When set up, Moniker can render these sorts of complex multi-script usernames.
+When set up, Moniker can render complex multi-script usernames. **Please note** that Moniker does not currently support Bengali.
