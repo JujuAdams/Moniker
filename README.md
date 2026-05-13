@@ -10,6 +10,7 @@ gttest1
 øÜêþЯЂў
 فلانة الفلانية
 小明
+홍길동
 ```
 
 When set up, Moniker can render complex multi-script usernames. **Please note** that Moniker does not currently support Bengali.
