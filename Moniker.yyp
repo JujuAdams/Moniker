@@ -18,6 +18,7 @@
   "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"KRDEV370.TTF","CopyToMask":-1,"filePath":"datafiles","name":"KRDEV370.TTF","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"moniker_license.txt","CopyToMask":-1,"filePath":"datafiles","name":"moniker_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"moniker_lut.bin","CopyToMask":-1,"filePath":"datafiles","name":"moniker_lut.bin","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"Montserrat_license.txt","CopyToMask":-1,"filePath":"datafiles","name":"Montserrat_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"Montserrat-BlackItalic.ttf","CopyToMask":-1,"filePath":"datafiles","name":"Montserrat-BlackItalic.ttf","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
