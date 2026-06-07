@@ -54,11 +54,14 @@ function __MonikerGlyphArrayBiDiReorder(_glyphArray, _rightToLeftHint, _copy = t
         if (_inBidi == BIDI.SYMBOL)
         {
             //Check before first
-            var _newBidi = (_start <= 0)? undefined : _funcDetermineBidi(_funcDetermineBidi, _overallBidi, _bidiArray, _length, _start-1, undefined);
-            if ((_newBidi == BIDI.L2R) || (_newBidi == BIDI.R2L))
+            if ((_start > 0) && (_bidiArray[@ _start-1] != BIDI.SYMBOL))
             {
-                _bidiArray[@ _start] = _newBidi;
-                return _newBidi;
+                var _newBidi = _funcDetermineBidi(_funcDetermineBidi, _overallBidi, _bidiArray, _length, _start-1, undefined);
+                if ((_newBidi == BIDI.L2R) || (_newBidi == BIDI.R2L))
+                {
+                    _bidiArray[@ _start] = _newBidi;
+                    return _newBidi;
+                }
             }
             
             //Check after second
