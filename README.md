@@ -1,5 +1,5 @@
-<h1 align="center">Moniker 2.0.0</h1>
-<p align="center">Arbitrary, internationalized player name rendering for GameMaker</p>
+<h1 align="center">Moniker 3.0.0</h1>
+<p align="center">Arbitrary, internationalized player name rendering for GameMaker LTS 2026</p>
 
 Here are some well-known test usernames:
 
