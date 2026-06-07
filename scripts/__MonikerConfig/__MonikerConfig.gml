@@ -8,7 +8,3 @@
 // Whether Moniker names should be drawn antialiased or not. This is a global setting and will
 // affect all fonts added with Moniker.
 #macro MONIKER_ANTIALIAS  true
-
-// Whether to prefer using a Simplified Chinese font rather than a Traditional Chinese font where
-// available.
-#macro MONIKER_PREFER_CHINESE_SIMP  true

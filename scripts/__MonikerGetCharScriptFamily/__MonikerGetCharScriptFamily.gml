@@ -1,6 +1,7 @@
 function __MonikerGetCharScriptFamily(_glyphIndex, _hasSimplifiedChineseFont, _hasTraditionalChineseFont)
 {
-    static _lookUpBuffer = __MonikerSystem().__lookUpBuffer;
+    static _system = __MonikerSystem();
+    static _lookUpBuffer = _system.__lookUpBuffer;
     
     if ((_glyphIndex < 0) || (_glyphIndex > 0xFFFF))
     {
@@ -28,7 +29,7 @@ function __MonikerGetCharScriptFamily(_glyphIndex, _hasSimplifiedChineseFont, _h
             {
                 //We have a font for both types of Chinese. Choose one of them for the script family
                 
-                if (MONIKER_PREFER_CHINESE_SIMP)
+                if (_system.__preferSimplifiedChinese)
                 {
                     if (_data & __MONIKER_BINARY_CHINESE_SIMP)
                     {

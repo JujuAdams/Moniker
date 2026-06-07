@@ -29,6 +29,7 @@ function __MonikerSystem()
         }
         
         __defaultFontPack = undefined;
+        __preferSimplifiedChinese = true;
     }
     
     return _system;

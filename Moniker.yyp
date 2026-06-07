@@ -60,6 +60,8 @@
     {"id":{"name":"MonikerCache","path":"scripts/MonikerCache/MonikerCache.yy",},},
     {"id":{"name":"MonikerClearCache","path":"scripts/MonikerClearCache/MonikerClearCache.yy",},},
     {"id":{"name":"MonikerFontPack","path":"scripts/MonikerFontPack/MonikerFontPack.yy",},},
+    {"id":{"name":"MonikerGetPreferSimplifiedChinese","path":"scripts/MonikerGetPreferSimplifiedChinese/MonikerGetPreferSimplifiedChinese.yy",},},
+    {"id":{"name":"MonikerSetPreferSimplifiedChinese","path":"scripts/MonikerSetPreferSimplifiedChinese/MonikerSetPreferSimplifiedChinese.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

@@ -23,5 +23,7 @@
     {"name":"MonikerCache","order":4,"path":"scripts/MonikerCache/MonikerCache.yy",},
     {"name":"MonikerClearCache","order":5,"path":"scripts/MonikerClearCache/MonikerClearCache.yy",},
     {"name":"MonikerFontPack","order":6,"path":"scripts/MonikerFontPack/MonikerFontPack.yy",},
+    {"name":"MonikerGetPreferSimplifiedChinese","order":8,"path":"scripts/MonikerGetPreferSimplifiedChinese/MonikerGetPreferSimplifiedChinese.yy",},
+    {"name":"MonikerSetPreferSimplifiedChinese","order":7,"path":"scripts/MonikerSetPreferSimplifiedChinese/MonikerSetPreferSimplifiedChinese.yy",},
   ],
 }

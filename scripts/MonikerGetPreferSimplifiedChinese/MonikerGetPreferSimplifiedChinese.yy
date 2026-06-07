@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"MonikerGetPreferSimplifiedChinese",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"MonikerGetPreferSimplifiedChinese",
+  "parent":{
+    "name":"Moniker",
+    "path":"folders/Moniker.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
